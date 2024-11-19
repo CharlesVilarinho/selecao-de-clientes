@@ -4,6 +4,10 @@ Este é o projeto Front-End desenvolvido com **React** e **Vite** para o desafio
 
 ---
 
+## 🚀 **Vídeo demonstrando a aplicação na pasta public**
+
+---
+
 ## 🚀 **Requisitos do Sistema**
 
 1. **Node.js**: versão `18.x` ou superior.
