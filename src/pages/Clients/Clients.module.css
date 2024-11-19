@@ -1,0 +1,192 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 calc(160px + max(0px, (100vw - 1600px) / 7));
+  width: 100%;
+}
+
+.clientsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  max-width: calc((285px + 16px) * 4 - 16px);
+}
+
+@media (max-width: 1199px) {
+  .infoBar {
+    max-width: 100%;
+  }
+
+  .clientsContainer {
+    max-width: 100%;
+  }
+
+  .createButton {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .clientsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .clientsContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 900px) {
+  .clientsContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 899px) and (min-width: 600px) {
+  .clientsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 599px) {
+  .clientsContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .infoBar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+.clientCard {
+  width: 100%;
+  max-width: 285px;
+  height: 138px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+.clientInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.clientInfo h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.clientInfo p {
+  font-size: 14px;
+  margin: 2px 0;
+}
+
+.clientButtons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clientButtons button {
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clientButtons button:hover {
+  background-color: #0056b3;
+}
+
+/* Barra de informações */
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: calc((285px + 16px) * 4 - 16px);
+  margin-top: 30px;
+}
+
+.infoBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: calc((285px + 16px) * 4 - 16px);
+  margin-bottom: 20px;
+}
+
+.infoBar span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls label {
+  font-size: 14px;
+}
+
+.controls select {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Botão de criar cliente */
+.createButtonContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.createButton {
+  width: calc((285px + 16px) * 4 - 16px);
+  max-width: 100%;
+  padding: 12px 16px;
+  color: #ec6724;
+  border: 2px solid;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.createButton:hover {
+  background-color: #ec6724;
+  color: #fff;
+}
+
+.createButton:active {
+  background-color: #ec6724;
+  color: #fff;
+}
