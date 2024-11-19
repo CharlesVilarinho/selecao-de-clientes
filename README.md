@@ -16,8 +16,8 @@ Este é o projeto Front-End desenvolvido com **React** e **Vite** para o desafio
 1. **Clonar o repositório Front-End**:
 
    ```bash
-   git clone <URL_DO_REPOSITORIO_FRONT>
-   cd front-end
+   git clone https://github.com/CharlesVilarinho/selecao-de-clientes.git
+   cd selecao-de-clientes
    ```
 
 2. **Instalar as dependências**:
