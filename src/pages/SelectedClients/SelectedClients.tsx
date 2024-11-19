@@ -64,7 +64,6 @@ const SelectedClients: React.FC<SelectedClientsProps> = ({
         empresa: Number(client.empresa),
       }));
       setClients(updatedClients);
-      console.log("Clients:", response.data);
       return updatedClients;
     } catch (error) {
       console.error("Error fetching clients:", error);

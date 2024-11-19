@@ -67,10 +67,8 @@ const Clients: React.FC<ClientsProps> = ({ userName, setUserName }) => {
   }) => {
     if (actionType === "create") {
       // Implementar atualização dos dados após update
-      console.log("Criar cliente:", clientData);
     } else {
       // Implementar atualização dos dados após update
-      console.log("Editar cliente:", clientData);
     }
   };
 
@@ -117,7 +115,6 @@ const Clients: React.FC<ClientsProps> = ({ userName, setUserName }) => {
         empresa: Number(client.empresa),
       }));
       setClients(updatedClients);
-      console.log("Clients:", response.data);
       return updatedClients;
     } catch (error) {
       console.error("Error fetching clients:", error);

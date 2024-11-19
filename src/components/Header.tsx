@@ -13,11 +13,8 @@ const Header: React.FC<HeaderProps> = ({ userName, setUserName }) => {
 
   const handleLogout = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
-    console.log(`f`);
     setUserName(null);
-    console.log(`g`);
     navigate("/");
-    console.log(`h`);
   };
   return (
     <header className={styles.header}>

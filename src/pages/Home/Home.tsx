@@ -12,7 +12,6 @@ const Home: React.FC<HomeProps> = ({ setUserName }) => {
   const navigate = useNavigate();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value, `handleInputChange`);
     setName(event.target.value);
   };
 
