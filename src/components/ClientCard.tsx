@@ -21,7 +21,7 @@ const ClientCard: React.FC<ClientCardProps> = ({
       <div className={styles.info}>
         <h3>{name}</h3>
         <p>Salário: R$ {salario.toFixed(2)}</p>
-        <p>Empresa: {empresa}</p>
+        <p>Empresa: R$ {empresa.toFixed(2)}</p>
       </div>
       {children && (
         <div

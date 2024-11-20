@@ -13,10 +13,13 @@ interface ModalClientProps {
   } | null;
   onClose: () => void;
   onSubmit: (clientData: {
-    id: number;
+    id?: number;
     name: string;
+    selecionado: boolean;
     salario: number;
     empresa: number;
+    created_user?: string;
+    updated_user: string;
   }) => void;
 }
 
@@ -25,6 +28,7 @@ const ModalClient: React.FC<ModalClientProps> = ({
   action,
   clientData,
   onClose,
+  onSubmit,
 }) => {
   // Formata valor para o formato de moeda
   const formatCurrency = (value: number | string): string => {
@@ -76,24 +80,16 @@ const ModalClient: React.FC<ModalClientProps> = ({
         ) || 0,
       selecionado: false,
       updated_user: currentUser,
-      ...(action === "create" && { created_user: currentUser }),
+      ...(action === "create" && {
+        created_user: currentUser,
+      }),
+      ...(action === "edit" && {
+        id: clientData?.id,
+      }),
     };
 
-    try {
-      if (action === "create") {
-        await axios.post(`${import.meta.env.VITE_API_URL}/clients`, payload);
-      } else if (action === "edit" && clientData?.id) {
-        await axios.put(
-          `${import.meta.env.VITE_API_URL}/clients/${clientData.id}`,
-          payload
-        );
-      }
-      alert("Dados salvos com sucesso!");
-      onClose();
-    } catch (error) {
-      console.error("Erro ao salvar cliente:", error);
-      alert("Erro ao salvar os dados. Tente novamente.");
-    }
+    onSubmit(payload);
+    onClose();
   };
 
   const handleSalarioChange = (e: React.ChangeEvent<HTMLInputElement>) => {

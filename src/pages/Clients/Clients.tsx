@@ -60,15 +60,37 @@ const Clients: React.FC<ClientsProps> = ({ userName, setUserName }) => {
     setIsModalOpen(true);
   };
 
-  const handleSubmit = (clientData: {
+  const handleSubmit = async (clientData: {
+    id?: number;
     name: string;
+    selecionado: boolean;
     salario: number;
     empresa: number;
+    created_user?: string;
+    updated_user: string;
   }) => {
-    if (actionType === "create") {
-      // Implementar atualização dos dados após update
-    } else {
-      // Implementar atualização dos dados após update
+    try {
+      if (actionType === "create") {
+        const response = await axios.post<Client>(
+          `${import.meta.env.VITE_API_URL}/clients`,
+          clientData
+        );
+        setClients((prevClients) => [response.data, ...prevClients]);
+      } else if (actionType === "edit" && clientData.id) {
+        await axios.put(
+          `${import.meta.env.VITE_API_URL}/clients/${clientData.id}`,
+          clientData
+        );
+        setClients((prevClients) =>
+          prevClients.map((client) =>
+            client.id === clientData.id ? { ...client, ...clientData } : client
+          )
+        );
+      }
+      alert("Cliente salvo com sucesso!");
+    } catch (error) {
+      console.error("Erro ao salvar cliente:", error);
+      alert("Não foi possível salvar o cliente. Tente novamente.");
     }
   };
 
